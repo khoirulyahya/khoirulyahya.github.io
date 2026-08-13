@@ -4,19 +4,39 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0c0d0d">
-  <meta name="description" content="Muhammad Khoirul Yahya — Backend & DevOps Engineer building reliable Laravel systems, infrastructure, and deployment workflows.">
-  <meta property="og:title" content="Muhammad Khoirul Yahya — Backend & DevOps Engineer">
-  <meta property="og:description" content="Backend systems and production infrastructure, built to stay running.">
+  <meta name="description" content="Muhammad Khoirul Yahya is a Backend & DevOps Engineer working with Laravel, Docker, Linux, Nginx, MySQL, and deployment automation.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://khoirulyahya.github.io/">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <meta property="og:title" content="Muhammad Khoirul Yahya - Backend & DevOps Engineer">
+  <meta property="og:description" content="Laravel backends, Linux infrastructure, and deployment automation for production systems.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://khoirulyahya.github.io/">
-  <title>Muhammad Khoirul Yahya — Backend & DevOps Engineer</title>
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Muhammad Khoirul Yahya - Backend & DevOps Engineer">
+  <meta name="twitter:description" content="Laravel backends, Linux infrastructure, and deployment automation for production systems.">
+  <title>Muhammad Khoirul Yahya - Backend & DevOps Engineer</title>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Muhammad Khoirul Yahya",
+      "url": "https://khoirulyahya.github.io/",
+      "jobTitle": "Backend & DevOps Engineer",
+      "email": "mailto:khoiruly28@gmail.com",
+      "sameAs": [
+        "https://github.com/khoirulyahya",
+        "https://linkedin.com/in/khoirul-yahya"
+      ]
+    }
+  </script>
   <style>
     :root {
       --ink: #0c0d0d;
       --paper: #f3f0e8;
       --paper-2: #e8e4da;
       --acid: #c8ff3d;
-      --muted: #777970;
+      --muted: #66685f;
       --line: rgba(12, 13, 13, .17);
       --max: 1180px;
     }
@@ -34,6 +54,8 @@
 
     a { color: inherit; }
     a:focus-visible, button:focus-visible { outline: 3px solid var(--acid); outline-offset: 4px; }
+    .skip-link { position: fixed; top: 10px; left: 10px; z-index: 100; padding: 12px 16px; background: var(--acid); color: var(--ink); font-weight: 800; transform: translateY(-160%); }
+    .skip-link:focus { transform: translateY(0); }
     .wrap { width: min(calc(100% - 48px), var(--max)); margin-inline: auto; }
     .mono { font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace; }
 
@@ -77,10 +99,13 @@
     .proof { background: var(--ink); color: var(--paper); }
     .proof .section-head { border-color: rgba(243,240,232,.2); }
     .proof-grid { border-top: 1px solid rgba(243,240,232,.24); }
-    .proof-item { display: grid; grid-template-columns: 170px 1fr 60px; gap: 40px; padding: 30px 0; border-bottom: 1px solid rgba(243,240,232,.24); align-items: start; }
+    .proof-item { display: grid; grid-template-columns: 170px 1fr auto; gap: 40px; padding: 30px 0; border-bottom: 1px solid rgba(243,240,232,.24); align-items: start; }
     .proof-item .tag { color: var(--acid); font-size: 11px; text-transform: uppercase; letter-spacing: .09em; }
     .proof-item p { margin: 0; max-width: 780px; font-size: clamp(18px, 2vw, 25px); line-height: 1.4; letter-spacing: -.02em; }
-    .proof-item .arrow { text-align: right; font-size: 22px; color: var(--acid); }
+    .proof-link { min-height: 44px; display: inline-flex; align-items: center; gap: 10px; color: var(--acid); font-size: 12px; font-weight: 750; letter-spacing: .06em; text-decoration: none; text-transform: uppercase; white-space: nowrap; }
+    .proof-link span { font-size: 22px; transition: transform .2s ease-out; }
+    .proof-link:hover { text-decoration: underline; text-underline-offset: 5px; }
+    .proof-link:hover span { transform: translate(3px, -3px); }
 
     .stack-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
     .stack-card { min-height: 270px; padding: 28px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); display: flex; flex-direction: column; justify-content: space-between; transition: background .25s, color .25s, transform .25s; }
@@ -128,7 +153,8 @@
       .wrap { width: min(calc(100% - 28px), var(--max)); }
       .nav { height: 62px; }
       .nav-links a:not(.status) { display: none; }
-      .status { font-size: 11px !important; }
+      .nav-links { margin-left: auto; gap: 0; }
+      .status { min-height: 44px; padding-inline: 4px; font-size: 11px !important; white-space: nowrap; }
       .hero { min-height: calc(100svh - 62px); padding: 58px 0 50px; }
       h1 { font-size: clamp(54px, 20vw, 86px); }
       h1 .outline { -webkit-text-stroke-width: 1.5px; }
@@ -138,8 +164,9 @@
       .hero-meta { justify-self: start; text-align: left; }
       section { padding: 76px 0; }
       .section-head { gap: 18px; margin-bottom: 42px; }
-      .proof-item { grid-template-columns: 1fr 30px; gap: 14px; }
+      .proof-item { grid-template-columns: 1fr; gap: 14px; }
       .proof-item .tag { grid-column: 1 / -1; }
+      .proof-link { justify-self: start; }
       .stack-grid, .project-grid { grid-template-columns: 1fr; }
       .stack-card { min-height: 220px; }
       .project { min-height: 300px; padding: 26px; }
@@ -149,9 +176,10 @@
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to main content</a>
   <header class="site-header">
     <nav class="nav wrap" aria-label="Primary navigation">
-      <a class="mark" href="#top" aria-label="Back to top">MKY.</a>
+      <a class="mark" href="#main" aria-label="Back to top">MKY.</a>
       <div class="nav-links">
         <a href="#work">Work</a>
         <a href="#stack">Stack</a>
@@ -161,13 +189,13 @@
     </nav>
   </header>
 
-  <main id="top">
+  <main id="main">
     <section class="hero wrap" aria-labelledby="hero-title">
       <div>
         <p class="eyebrow mono">Yogyakarta, Indonesia · UTC+7</p>
         <h1 id="hero-title"><span>Backend.</span><span class="outline">DevOps.</span><span>Reliable.</span></h1>
         <div class="hero-foot">
-          <p class="hero-copy">I build backend systems and production infrastructure—not just to ship, but to keep running.</p>
+          <p class="hero-copy">I build Laravel backends, manage Linux infrastructure, and automate deployments for production systems.</p>
           <div class="hero-meta mono">Muhammad Khoirul Yahya<br>Backend &amp; DevOps Engineer</div>
         </div>
       </div>
@@ -183,14 +211,14 @@
       <div class="wrap">
         <div class="section-head">
           <span class="section-no mono">01 / Production proof</span>
-          <h2 id="proof-title">Work measured in systems that stay up.</h2>
+          <h2 id="proof-title">Production work I have handled.</h2>
         </div>
         <div class="proof-grid">
-          <article class="proof-item"><span class="tag mono">Infrastructure</span><p>Migrated a complete application stack between VPS providers, reconfiguring multiple services end to end.</p><span class="arrow" aria-hidden="true">→</span></article>
-          <article class="proof-item"><span class="tag mono">Data</span><p>Moved object storage across Vultr, AWS S3, and DigitalOcean Spaces with rclone and zero data loss.</p><span class="arrow" aria-hidden="true">→</span></article>
-          <article class="proof-item"><span class="tag mono">Automation</span><p>Built local and Google Drive backups, log rotation, and Telegram status reports from scratch.</p><span class="arrow" aria-hidden="true">→</span></article>
-          <article class="proof-item"><span class="tag mono">Delivery</span><p>Configured GitHub Actions pipelines for automated testing and dependable deployments.</p><span class="arrow" aria-hidden="true">→</span></article>
-          <article class="proof-item"><span class="tag mono">Messaging</span><p>Set up FCM push notifications and transactional email infrastructure, including DNS and provider strategy.</p><span class="arrow" aria-hidden="true">→</span></article>
+          <article class="proof-item"><span class="tag mono">Infrastructure</span><p>Migrated a complete application stack between VPS providers and reconfigured its services.</p></article>
+          <article class="proof-item"><span class="tag mono">Data</span><p>Moved object storage across Vultr, AWS S3, and DigitalOcean Spaces with rclone and zero data loss.</p><a class="proof-link mono" href="https://github.com/khoirulyahya/rclone-s3-operations-playbook" target="_blank" rel="noreferrer">View notes <span aria-hidden="true">↗</span></a></article>
+          <article class="proof-item"><span class="tag mono">Automation</span><p>Built local and Google Drive backups, log rotation, and Telegram status reports.</p><a class="proof-link mono" href="https://github.com/khoirulyahya/mysql-docker-backup" target="_blank" rel="noreferrer">View notes <span aria-hidden="true">↗</span></a></article>
+          <article class="proof-item"><span class="tag mono">Delivery</span><p>Configured GitHub Actions pipelines for automated testing and deployments.</p></article>
+          <article class="proof-item"><span class="tag mono">Messaging</span><p>Set up FCM push notifications and transactional email infrastructure, including DNS configuration and provider switching.</p></article>
         </div>
       </div>
     </section>
@@ -199,7 +227,7 @@
       <div class="wrap">
         <div class="section-head">
           <span class="section-no mono">02 / Working stack</span>
-          <h2 id="stack-title">Tools chosen for boring reliability.</h2>
+          <h2 id="stack-title">Tools I use in production.</h2>
         </div>
         <div class="stack-grid">
           <article class="stack-card"><small class="mono">Backend / 01</small><div><h3>Laravel</h3><p>PHP APIs, application architecture, integrations, queues, and dependable business logic.</p></div></article>
@@ -233,8 +261,8 @@
         <div class="about-copy">
           <p>I work across the line between application code and the infrastructure beneath it. That means building Laravel APIs, managing Linux servers, automating deployments, and staying with the system when production gets interesting.</p>
           <p>Based in Yogyakarta and currently exploring remote full-time opportunities in backend and infrastructure engineering.</p>
-          <div class="role"><div><strong>Brofesional.id</strong><span>Backend &amp; DevOps Engineer</span></div><span class="mono">2024—NOW</span></div>
-          <div class="role"><div><strong>QezaCare</strong><span>Freelance · Healthcare dashboard</span></div><span class="mono">PROJECT</span></div>
+          <div class="role"><div><strong>Brofesional.id</strong><span>Backend &amp; DevOps Engineer</span></div><span class="mono">2024-PRESENT</span></div>
+          <div class="role"><div><strong>QezaCare</strong><span>Frontend Web Developer · Healthcare dashboard</span></div><span class="mono">PROJECT</span></div>
         </div>
       </div>
     </section>
@@ -242,7 +270,7 @@
 
   <footer>
     <div class="wrap">
-      <p class="footer-title">Have a system that needs to <em>stay running?</em></p>
+      <p class="footer-title">Need help with a backend or <em>production environment?</em></p>
       <div class="contact-row">
         <a href="mailto:khoiruly28@gmail.com">Email me ↗</a>
         <a href="https://linkedin.com/in/khoirul-yahya" target="_blank" rel="noreferrer">LinkedIn ↗</a>
