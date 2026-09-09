@@ -5,12 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0c0d0d">
   <meta name="description" content="Muhammad Khoirul Yahya is a Backend & DevOps Engineer working with Laravel, Docker, Linux, Nginx, MySQL, and deployment automation.">
+  <meta name="author" content="Muhammad Khoirul Yahya">
+  <meta name="keywords" content="Muhammad Khoirul Yahya, Khoirul Yahya, Backend Engineer, DevOps Engineer, Laravel, Docker, Linux, Yogyakarta">
+  <meta name="google-site-verification" content="RcZTdsV-bMt0M3PYa9XvSsCIBBF9VRc15HOUbAoKngI">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://khoirulyahya.github.io/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <meta property="og:title" content="Muhammad Khoirul Yahya - Backend & DevOps Engineer">
   <meta property="og:description" content="Laravel backends, Linux infrastructure, and deployment automation for production systems.">
-  <meta property="og:type" content="website">
+  <meta property="og:type" content="profile">
   <meta property="og:url" content="https://khoirulyahya.github.io/">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Muhammad Khoirul Yahya - Backend & DevOps Engineer">
@@ -21,9 +24,25 @@
       "@context": "https://schema.org",
       "@type": "Person",
       "name": "Muhammad Khoirul Yahya",
+      "alternateName": ["Khoirul Yahya", "MKY"],
       "url": "https://khoirulyahya.github.io/",
       "jobTitle": "Backend & DevOps Engineer",
       "email": "mailto:khoiruly28@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Yogyakarta",
+        "addressCountry": "ID"
+      },
+      "knowsAbout": [
+        "Laravel",
+        "DevOps",
+        "Docker",
+        "Linux",
+        "MySQL",
+        "CI/CD",
+        "Nginx",
+        "Backend Architecture"
+      ],
       "sameAs": [
         "https://github.com/khoirulyahya",
         "https://linkedin.com/in/khoirul-yahya"
@@ -86,10 +105,33 @@
     .hero-copy { max-width: 620px; margin: 0; overflow-wrap: anywhere; font-size: clamp(18px, 2vw, 26px); line-height: 1.35; letter-spacing: -.025em; }
     .hero-meta { justify-self: end; text-align: right; font-size: 12px; line-height: 1.7; text-transform: uppercase; letter-spacing: .08em; }
 
-    .ticker { overflow: hidden; background: var(--acid); border-block: 1px solid var(--ink); }
-    .ticker-track { width: max-content; padding: 13px 0; display: flex; gap: 22px; font-size: 13px; font-weight: 850; text-transform: uppercase; letter-spacing: .08em; animation: ticker 26s linear infinite; }
-    .ticker-track span::after { content: "✦"; margin-left: 22px; }
-    @keyframes ticker { to { transform: translateX(-50%); } }
+    .ticker {
+      overflow: hidden;
+      background: var(--acid);
+      border-block: 1px solid var(--ink);
+      display: flex;
+      user-select: none;
+    }
+    .ticker-group {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      padding: 13px 11px;
+      font-size: 13px;
+      font-weight: 850;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      flex-shrink: 0;
+      min-width: 100%;
+      animation: ticker-scroll 25s linear infinite;
+      will-change: transform;
+    }
+    .ticker-group span::after { content: "✦"; margin-left: 22px; }
+    .ticker:hover .ticker-group { animation-play-state: paused; }
+    @keyframes ticker-scroll {
+      from { transform: translateX(0); }
+      to { transform: translateX(-100%); }
+    }
 
     section { padding: 112px 0; }
     .section-head { display: grid; grid-template-columns: 170px 1fr; gap: 40px; margin-bottom: 64px; }
@@ -201,8 +243,11 @@
       </div>
     </section>
 
-    <div class="ticker" aria-hidden="true">
-      <div class="ticker-track mono">
+    <div class="ticker" role="region" aria-label="Skills ticker">
+      <div class="ticker-group mono">
+        <span>Laravel APIs</span><span>Ubuntu VPS</span><span>Docker</span><span>CI/CD</span><span>Object Storage</span><span>MySQL</span><span>Nginx</span><span>Laravel APIs</span><span>Ubuntu VPS</span><span>Docker</span><span>CI/CD</span><span>Object Storage</span><span>MySQL</span><span>Nginx</span>
+      </div>
+      <div class="ticker-group mono" aria-hidden="true">
         <span>Laravel APIs</span><span>Ubuntu VPS</span><span>Docker</span><span>CI/CD</span><span>Object Storage</span><span>MySQL</span><span>Nginx</span><span>Laravel APIs</span><span>Ubuntu VPS</span><span>Docker</span><span>CI/CD</span><span>Object Storage</span><span>MySQL</span><span>Nginx</span>
       </div>
     </div>
