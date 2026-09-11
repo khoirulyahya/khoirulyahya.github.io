@@ -170,6 +170,11 @@
     .project small { font-size: 11px; text-transform: uppercase; letter-spacing: .1em; }
     .project h3 { margin: auto 0 16px; max-width: 450px; font-size: clamp(30px, 4vw, 50px); line-height: .98; letter-spacing: -.055em; }
     .project p { margin: 0; max-width: 480px; color: #5f615b; line-height: 1.55; }
+    .labs-more { display: none; }
+    .labs-more.is-open { display: contents; }
+    .labs-toggle-wrap { margin-top: 36px; display: flex; justify-content: center; }
+    .labs-toggle-btn { background: transparent; border: 1px solid var(--ink); color: var(--ink); font-family: inherit; font-size: 12px; font-weight: 750; letter-spacing: .08em; text-transform: uppercase; padding: 14px 28px; cursor: pointer; display: inline-flex; align-items: center; gap: 10px; transition: background .2s, color .2s, transform .2s; }
+    .labs-toggle-btn:hover { background: var(--ink); color: var(--paper); transform: translateY(-2px); }
 
     .about { background: var(--acid); }
     .about-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 90px; }
@@ -296,10 +301,29 @@
           <h2 id="projects-title">Practical notes &amp; agentic tools.</h2>
         </div>
         <div class="project-grid">
-          <a class="project" href="https://github.com/khoirulyahya/laravel-vps-hardening-lab" target="_blank" rel="noreferrer"><small class="mono">Security · Laravel · VPS</small><div><h3>Laravel VPS Hardening Lab</h3><p>Production-minded server hardening patterns for Laravel applications on Ubuntu.</p></div></a>
+          <!-- Top 6 Featured Labs -->
           <a class="project" href="https://github.com/khoirulyahya/antigravity-session-manager" target="_blank" rel="noreferrer"><small class="mono">Agentic AI · SQLite · Tooling</small><div><h3>Antigravity Session Manager</h3><p>CLI session engine, UUID resolver, and DX architecture RFC for Google Antigravity.</p></div></a>
+          <a class="project" href="https://github.com/khoirulyahya/hermes-local-agent-lab" target="_blank" rel="noreferrer"><small class="mono">AI Agent · Gateway · MCP</small><div><h3>Hermes Local Agent Lab</h3><p>Multi-provider LLM routing, Telegram/WhatsApp agent gateways, MCP Trello, and approval-based coding.</p></div></a>
+          <a class="project" href="https://github.com/khoirulyahya/laravel-backend-portfolio" target="_blank" rel="noreferrer"><small class="mono">Laravel 12 · Architecture · API</small><div><h3>Laravel Backend Portfolio</h3><p>OpsLedger API: JWT auth, RBAC, queue worker systems, payment webhooks, Docker &amp; CI.</p></div></a>
+          <a class="project" href="https://github.com/khoirulyahya/laravel-vps-hardening-lab" target="_blank" rel="noreferrer"><small class="mono">Security · Laravel · VPS</small><div><h3>Laravel VPS Hardening Lab</h3><p>Production-minded server hardening patterns for Laravel applications on Ubuntu.</p></div></a>
           <a class="project" href="https://github.com/khoirulyahya/rclone-s3-operations-playbook" target="_blank" rel="noreferrer"><small class="mono">Storage · Cloud · Operations</small><div><h3>rclone S3 Operations Playbook</h3><p>Copy, sync, dry-run, ACL, bucket policy, and safe IAM access-revocation workflows.</p></div></a>
           <a class="project" href="https://github.com/khoirulyahya/mysql-docker-backup" target="_blank" rel="noreferrer"><small class="mono">MySQL · Docker · Backup</small><div><h3>MySQL Docker Backup</h3><p>Operational backup automation built for containerized database environments.</p></div></a>
+
+          <!-- Expandable More Labs -->
+          <div id="more-labs" class="labs-more">
+            <a class="project" href="https://github.com/khoirulyahya/n8n-automation-workflow-lab" target="_blank" rel="noreferrer"><small class="mono">Automation · Event-Driven · n8n</small><div><h3>Automation Workflow Lab</h3><p>Self-hosted n8n pipelines, Telegram bot routing, Google Sheets logging, and webhook event processing.</p></div></a>
+            <a class="project" href="https://github.com/khoirulyahya/aria2-ssh-proxy" target="_blank" rel="noreferrer"><small class="mono">Networking · CLI · Proxy</small><div><h3>Aria2 SSH Proxy</h3><p>Reproducible macOS CLI download stack using aria2, Privoxy, and SSH SOCKS5 tunneling.</p></div></a>
+            <a class="project" href="https://github.com/khoirulyahya/ssh-socks5-access-lab" target="_blank" rel="noreferrer"><small class="mono">Security · Network · Linux</small><div><h3>SSH SOCKS5 Access Lab</h3><p>Access-control lab using SSH SOCKS5 tunneling, Nginx IP whitelist, and Linux user isolation.</p></div></a>
+            <a class="project" href="https://github.com/khoirulyahya/atlas-desk-admin" target="_blank" rel="noreferrer"><small class="mono">React · State · Dashboard</small><div><h3>Atlas Desk Admin</h3><p>Multi-site coworking operations admin dashboard with Redux Toolkit and MSW mock API.</p></div></a>
+            <a class="project" href="https://github.com/khoirulyahya/laravel-weather-locations-api" target="_blank" rel="noreferrer"><small class="mono">Laravel · REST API · Sync</small><div><h3>Weather Locations API</h3><p>Timed live-coding API for location data and OpenWeather sync with documented post-interview audit fixes.</p></div></a>
+            <a class="project" href="https://github.com/khoirulyahya/react-admin-dashboard-demo" target="_blank" rel="noreferrer"><small class="mono">React · TypeScript · UI</small><div><h3>React Admin Incident Triage</h3><p>Incident triage dashboard demo with demo auth, RBAC UI, and mock API tests.</p></div></a>
+          </div>
+        </div>
+
+        <div class="labs-toggle-wrap">
+          <button type="button" id="labs-toggle-btn" class="labs-toggle-btn mono" aria-expanded="false" aria-controls="more-labs">
+            Explore more labs (+6) <span aria-hidden="true">↓</span>
+          </button>
         </div>
       </div>
     </section>
@@ -328,6 +352,19 @@
       <div class="footer-bottom mono"><span>© <span id="year">2026</span> Muhammad Khoirul Yahya</span><span>Built with plain HTML &amp; CSS</span></div>
     </div>
   </footer>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const toggleBtn = document.getElementById('labs-toggle-btn');
+    const moreLabs = document.getElementById('more-labs');
+    if (toggleBtn && moreLabs) {
+      toggleBtn.addEventListener('click', () => {
+        const isOpen = moreLabs.classList.toggle('is-open');
+        toggleBtn.setAttribute('aria-expanded', isOpen);
+        toggleBtn.innerHTML = isOpen 
+          ? 'Show fewer labs <span aria-hidden="true">↑</span>' 
+          : 'Explore more labs (+6) <span aria-hidden="true">↓</span>';
+      });
+    }
+  </script>
 </body>
 </html>
