@@ -31,4 +31,5 @@ Built with a minimalist, brutalist design philosophy using zero runtime dependen
 *Backend, DevOps & Agentic Systems Engineer*  
 - Website: [https://khoirulyahya.github.io](https://khoirulyahya.github.io)  
 - GitHub: [@khoirulyahya](https://github.com/khoirulyahya)  
-- LinkedIn: [in/khoirul-yahya](https://linkedin.com/in/khoirul-yahya)
+- LinkedIn: [in/khoirul-yahya](https://linkedin.com/in/khoirul-yahya)  
+- Medium: [@khoiruly28](https://medium.com/@khoiruly28)
